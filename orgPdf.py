@@ -3,6 +3,7 @@ import re
 import shutil
 
 def orgFiles(orgRoot):
+	print os.listdir(orgRoot)
 
 	for root, dirs, files in os.walk(orgRoot):
 		splitfilenames = [file.split('_') for file in files]
@@ -82,7 +83,7 @@ def moveFile(root, code, year, postfix, isFullDisclosure, isException):
 
 	frompath =root + name
 
-	shutil.copy2(frompath, topath)
+	shutil.move(frompath, tofolder)
 
 
 def getFolder(root, year, isFullDisclosure, isException):
@@ -101,6 +102,7 @@ def getFolder(root, year, isFullDisclosure, isException):
 
 
 if __name__ == '__main__':
-	orgFiles("C:\\_private\\saif\\paper\\all\\zip\\2013\\download\\")
-	orgFiles("C:\\_private\\saif\\paper\\all\\zip\\2014\\download\\")
-	orgFiles("C:\\_private\\saif\\paper\\all\\zip\\2015\\download\\")
+
+	orgFiles("C:\\_workshop\\prj_saif_paper\\pdfs\\")
+
+
